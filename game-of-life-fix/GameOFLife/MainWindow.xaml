@@ -1,0 +1,32 @@
+<Window x:Class="GameOFLife.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GameOFLife"
+        mc:Ignorable="d"
+        Title="GameOfLife" Height="700" Width="1100">
+    <DockPanel>
+        <!-- Панель кнопок сверху -->
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal"
+                    Margin="10,8,10,8" Height="46">
+            <Button Content="Start"  Width="110" Height="36" Margin="0,0,8,0" Click="Button_Click" Background="#98FB98" BorderBrush="Black" BorderThickness="2" FontWeight="Black" FontSize="22" FontFamily="Cascadia Mono"/>
+            <Button Content="Finish" Width="110" Height="36" Margin="0,0,8,0" Click="Button_Click" Background="#FFEFD5" BorderBrush="Black" BorderThickness="2" FontWeight="Black" FontSize="22" FontFamily="Cascadia Mono"/>
+            <Button Content="Clear"  Width="110" Height="36" Margin="0,0,8,0" Click="Button_Click" Background="#FFA07A" BorderBrush="Black" BorderThickness="2" FontWeight="Black" FontSize="22" FontFamily="Cascadia Mono"/>
+            <Button Content="Speed"  Width="110" Height="36" Margin="0,0,24,0" Click="Button_Click" Background="#AFEEEE" BorderBrush="Black" BorderThickness="2" FontWeight="Black" FontSize="22" FontFamily="Cascadia Mono"/>
+            <Separator Width="1" Margin="0,4,16,4"/>
+            <StackPanel VerticalAlignment="Center" Margin="0,0,0,0">
+                <TextBlock x:Name="GenLabel"   Text="Generation: 0" FontSize="13"/>
+                <TextBlock x:Name="SpeedLabel" Text="Speed: x1"     FontSize="13" Margin="0,2,0,0"/>
+            </StackPanel>
+        </StackPanel>
+
+        <!-- Игровое поле -->
+        <Border Margin="10,0,10,10" BorderBrush="Blue" BorderThickness="1"
+                Background="Black">
+            <UniformGrid x:Name="GameGrid" Rows="30" Columns="50">
+                <!-- Клетки генерируются при запуске проги -->
+            </UniformGrid>
+        </Border>
+    </DockPanel>
+</Window>
